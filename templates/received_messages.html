@@ -1,0 +1,27 @@
+{% if message_list %}
+<h2>Messages</h2>
+
+{% for message in message_list %}
+
+    <div class="well">
+        {{ message.content }}
+    </div>
+    <div class="sender">
+        Send By:<a href="/user/{{ message.message_link.from_friend.username }}">
+            {{ message.message_link.from_friend.username }}
+        </a>
+    </div>
+    <hr />
+    
+
+{% endfor %}
+
+{% else %}
+<h2>No messages</h2>
+{% endif %}
+<nav class="received_message_nav">
+  <ul class="pager">
+    <li class="previous"><div class="btn btn-primary" onclick=prev_message({{ start }})><span aria-hidden="true">&larr;</span> Older</div></li>
+    <li class="next"><div class="btn btn-primary" onclick=next_message({{ start }}) >Newer <span aria-hidden="true">&rarr;</span></div></li>
+  </ul>
+</nav>

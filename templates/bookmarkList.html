@@ -1,0 +1,45 @@
+{% if bookmarks %}
+    <h2>Bookmarked pages are -</h2>
+    <div class="table-responsive">
+    <table class="table table-hover " >
+    <tr>
+        <th >Title</th>
+        {% if show_tags %}
+            <th >Tags</th>
+        {% endif %}
+        {% if show_user %}
+            <th >PostedBy</th>
+        {% endif %}
+    </tr>
+    {% for bookmark in bookmarks %}
+        <tr>
+        <td ><a href="{{ bookmark.link.url }}" class="title">{{ bookmark.title|escape }}</a>
+        {% if show_edit %}
+            <a href="/save/?url={{ bookmark.link.url|urlencode }}" class="edit">[edit]</a>
+        {% endif %}
+        
+        
+        
+        </td>
+        {% if show_tags %}
+            <td >
+                {% for tag in  bookmark.tag_set.all %}
+                    <a href="/tag/{{ tag.name }}">{{ tag.name }}</a>
+                {% endfor %}
+                
+                
+            </td>
+        {% endif %}
+        {% if show_user %}
+            <td >{{ bookmark.user.username }}</td>
+        {% endif %}
+        </tr>
+         
+    {% endfor %}
+        
+    </table>
+    </div>
+{% else %}
+    <h3>Sorry no bookmark found.</h3>
+{% endif %}
+

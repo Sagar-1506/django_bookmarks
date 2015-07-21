@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block head %}Login {% endblock head %}
+{% block content %}
+
+        <form method="POST" action=".">{% csrf_token %}
+        {% if form.has_errors  %}
+        <h4>username and password do not match</h4>
+        {% endif %}
+            <div class="form-group col-md-offset-2 col-md-8" >
+                <label for = "id_username" class="col-md-4">Username</label>
+                <div class="col-md-4">{{ form.username }}</div>
+            </div>
+            <div class="form-group col-md-offset-2 col-md-8" >
+                <label for = "id_password" class="col-md-4">Password</label>
+                <div class="col-md-4">{{ form.password }}</div>
+            </div>
+            <input type ="hidden" name="next" value="/user" />
+            <div class="form-group col-md-offset-2 col-md-8" >
+                <div class="col-md-4"></div>
+                <input type="submit" value="login" class="btn btn-primary col-md-4" />
+            </div>
+
+        </form>
+    
+    
+{% endblock content %}
+    
+    
+

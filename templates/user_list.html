@@ -1,0 +1,16 @@
+
+{% for user,status,invite in user_list %}
+        <div class="container">
+            <a href="/user/{{ user }}" class="col-md-4"><h4>{{ user }}</h4></a>
+            {% if add_option %}
+                {% if status %}
+                    
+                    <a href="#" class="btn btn-primary btn-xs ">{{ invite }}</span></a>
+                    
+                    
+                {% else %}
+                    <a href="/add/?username={{ user }}" class="btn btn-primary btn-xs">{{ invite }}</a>
+                {% endif %}
+            {% endif %}
+        </div>
+{% endfor %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}bookmarks{% endblock title %}
+
+{% block head %}Results for {{ tag_name }} {% endblock head %}
+{% block content %}
+   {% include 'bookmarkList.html' %}
+{% endblock content %}    
+

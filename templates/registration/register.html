@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock title %}
+{% block head %}Register{% endblock head %}
+{% block content %}
+
+<form method="POST" action=".">{% csrf_token %}
+{% include 'formSnippet.html' %}
+
+
+<div class="row">
+<div class="form-group col-md-offset-2 col-md-8">
+    
+    
+    <div class="col-md-4"></div> <div class="col-md-4">
+    <input type="submit" value="register" class="btn btn-primary"/></div>
+</div>
+</div>
+
+
+</form>
+
+
+{% endblock content %}

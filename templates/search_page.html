@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock title %}
+
+{% block head %}
+{% if show_results %}
+   Results
+{% else %}
+    Search
+{% endif %}
+{% endblock head %}
+
+{% block content %}
+
+<form method="GET" action="." id="search-form">
+    {{ form.as_p }}
+    <input type="submit" value="Search" class="btn btn-primary"/>
+</form>
+<div id="search-result">
+{% if show_results %}
+   {% include 'bookmarkList.html' %}
+{% endif %}
+</div>
+{% endblock content %}    

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}bookmarks{% endblock title %}
+
+{% block head %}
+
+{% if user.is_authenticated and user.username == username %}
+Welcome {{ username }}
+{% else %}
+Bookmarks of {{ username }} :
+{% endif %}
+
+{% endblock head %}
+{% block content %}
+<div class="row">
+ <div class="bookmarkList col-md-8">
+   {% include 'bookmarkList.html' %}
+ </div>
+ <div class="friend-list col-md-4">
+    {% include 'friend_list.html' %}
+    
+ </div>
+</div>
+   
+{% endblock content %}
+{% block external %}
+
+
+<script src="/static/js/bookmark-edit.js"  ></script>
+<script src="/static/js/message_box.js"  ></script>
+
+
+{% endblock external %}
+    

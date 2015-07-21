@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Users{% endblock title %}
+
+{% block head %}
+    Users
+{% endblock head %}
+{% block content %}
+   {% include 'user_list.html' %}
+   
+{% endblock content %}
+{% block external %}
+{% load staticfiles %}
+
+<script src="{% static "js/bookmark-edit.js" %}" ></script>
+{% endblock external %}
+    

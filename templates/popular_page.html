@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock title %}
+{% block head %}Popular Bookmarks{% endblock head %}
+ {% block content %}
+<div >
+{% include 'shared_bookmark_list.html' %}
+</div>
+
+<div > 
+{% if user.username %}
+   <a href="/user/{{ user.username  }}/">Click here to see your bookmarks</a>
+{% else %}
+    <a href="/login/">Login to continue</a>
+{% endif %}
+</div>
+{% endblock content %}
+    
+

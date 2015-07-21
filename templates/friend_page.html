@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}bookmarks{% endblock title %}
+
+{% block head %}
+Let's see your friends' bookmarks
+{% endblock head %}
+
+{% block content %}
+    {% include 'friend_list.html' %}
+    {% include 'bookmarkList.html' %}
+   
+{% endblock content %}
+{% block external %}
+{% load staticfiles %}
+
+<script src="{% static "js/bookmark-edit.js" %}" ></script>
+<script src="{% static "js/message_box.js" %}" ></script>
+
+
+{% endblock external %}
+    

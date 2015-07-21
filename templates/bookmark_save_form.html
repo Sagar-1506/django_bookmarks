@@ -1,0 +1,5 @@
+<form method="POST" action="/save/" id="save-form" class="row">{% csrf_token %}
+{% include 'formSnippet.html' %}
+
+<input type="submit" value="save" class="btn btn-primary col-md-offset-2 col-md-8 "/>
+</form>

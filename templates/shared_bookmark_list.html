@@ -1,0 +1,12 @@
+
+{% for shared_bookmark in shared_bookmarks %}
+<div class="col-md-4"><a href="{{ shared_bookmark.bookmark.link.url }}" target ="blank" ><h3>{{ shared_bookmark.bookmark.title|escape }}</h3></a>
+
+    <ul >
+        <li>Posted By:<a href="/user/{{ shared_bookmark.bookmark.user.username }}">{{ shared_bookmark.bookmark.user.username|escape }}</a></li>
+         <li role="presentation" class="active">Votes <span class="badge">{{ shared_bookmark.votes }}</span>
+         <a href="/vote/?id={{ shared_bookmark.id }}">[+]</a></li>
+    </ul>
+</div>
+
+{% endfor %}

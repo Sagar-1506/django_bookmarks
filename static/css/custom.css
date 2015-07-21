@@ -1,0 +1,26 @@
+#tag-cloud{
+    text-align: center ;
+}
+#tag-cloud a {
+ margin: 0 0.2em;
+ font-stretch: expanded ;
+ 
+}
+.tag-cloud-0 {
+    font-size: 120% ;
+}
+.tag-cloud-1 {
+    font-size: 150% ;
+}
+.tag-cloud-2 {
+    font-size: 180% ;
+}
+.tag-cloud-3 {
+    font-size: 210% ;
+}
+.tag-cloud-4 {
+    font-size: 240% ;
+}
+.tag-cloud-5 {
+    font-size: 270% ;
+}

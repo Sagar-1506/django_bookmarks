@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Chat{% endblock title %}
+
+{% block head %}
+
+Chatbox
+
+{% endblock head %}
+{% block content %}
+<!--<meta http-equiv="refresh" content="20" /> -->
+<div class="row">
+    <div class="col-md-8">
+        <div class="received_messages "></div>
+        
+    </div>
+ <div class="friend-list col-md-4">
+    {% include 'friend_list.html' %}
+ </div>
+</div>
+   
+{% endblock content %}
+{% block external %}
+
+
+<script src="/static/js/received_message.js"></script>
+<script src="/static/js/message_box.js"  ></script>
+
+
+{% endblock external %}
+    

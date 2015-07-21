@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock title %}
+{% block head %}Welcome to land of bookmarks {% endblock head %}
+{% block content %}
+ 
+ 
+{% include 'shared_bookmark_list.html' %}
+ 
+ 
+ 
+
+ <div class="col-md-12">
+{% if user.username %}
+   <a href="/user/{{ user.username  }}/">Click here to see your bookmarks</a>
+{% else %}
+    <a href="/login/">Login to continue</a>
+{% endif %}
+</div>
+
+{% endblock content %}
+    
+

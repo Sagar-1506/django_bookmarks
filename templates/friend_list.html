@@ -1,0 +1,13 @@
+
+<h2>Your friends are </h2> 
+{% for friend in friends %}
+<div>
+<a href="/user/{{ friend.username }}"><h4>{{ friend.username }}</h4></a>
+<div class="btn btn-primary btn-xs msg-btn" id="{{ friend.username }}">message</div>
+<div class="message_box">
+{% include 'message_form.html' %}
+</div>
+</div>
+{% endfor %}
+
+
